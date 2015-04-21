@@ -7,6 +7,10 @@
 
 using namespace std;
 
+#define INPUT "balancing.in"
+#define OUTPUT "flows.out"
+
+
 const double eps = 1e-8;
 const int maxn = 202;
 /// Note that number of edges should be doubled in case of flows.
@@ -91,11 +95,20 @@ int maxflow() {
 
 
 
-int main() {
-	freopen("balancing.in", "rt", stdin);
-	freopen("flows.out", "wt", stdout);
-
-	scanf("%d%d", &n, &m);
+int main(int argc, char *argv[])  {
+	if(argc > 1) {
+    	freopen(argv[1], "r", stdin);
+    } else {
+    	freopen(INPUT, "r", stdin);
+    }
+    
+    if(argc > 2) {
+    	freopen(argv[2], "w", stdout);
+    } else {
+    	freopen(OUTPUT, "w", stdout);
+    }
+    
+    scanf("%d%d", &n, &m);
 	s = n;
 	t = n + 1;
 	memset(head, -1, sizeof head);

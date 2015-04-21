@@ -6,6 +6,9 @@
 
 using namespace std;
 
+#define INPUT "balancing.in"
+#define OUTPUT "gauss.out"
+
 const double eps = 1e-8;
 const int maxn = 100;
 const int maxm = 10000;
@@ -29,11 +32,20 @@ void add_edge(int q, int w) {
 }
 
 
-int main() {
-	freopen("balancing.in", "rt", stdin);
-	freopen("gauss.out", "wt", stdout);
-
-	int n, m;
+int main(int argc, char *argv[])  {
+	if(argc > 1) {
+    	freopen(argv[1], "r", stdin);
+    } else {
+    	freopen(INPUT, "r", stdin);
+    }
+    
+    if(argc > 2) {
+    	freopen(argv[2], "w", stdout);
+    } else {
+    	freopen(OUTPUT, "w", stdout);
+    }
+    
+    int n, m;
 	scanf("%d%d", &n, &m);
 	memset(head, -1, sizeof head);
 	
