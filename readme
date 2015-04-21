@@ -1,0 +1,47 @@
+##############################################################################
+##############################################################################
+Author: Malkovsky Nikolay,
+		mail: malkovskynv@gmail.com,
+		phone: +7 904 617 26 33 (Russia, St. Petersburg)
+		Currenly working in St. Petersburg State University
+
+Brief:  This is the simulation of several methods for graph balancing problem.
+		Simulation is representing results described in paper "Edge Weight Balancing 
+		Over Directed Graphs" currently	submitted for 2015 IEEE Multi-Conference 
+		on Systems and Control (MSC). Four methods are presented: balancing via 
+		an iterative method solving specific linear algebraic system; two 
+		circulation/flow based methods 	and simple gaussian elimination 
+		procedure applied to the same system first iterative method solves.
+
+Format: Each method is implemented as separate C++ program reading input from
+		the file "balancing.in" and writing output to separate output file.
+		There are currently several testcases in "balancing.in" (including the ones
+		described in the paper). "gen.cpp" is used to generate random graph with 
+		particular topology: ring that connects all the vertices plus two random edges
+		for each node.
+
+Compiler: gcc 4.8.1
+
+Input:  Graph is stored as a edge list as follows:
+		
+		n m
+		a_1 b_1
+		a_2 b_2
+		...
+		a_m b_m
+
+		where n -- number of edges (indexed from 1 to n), m -- number of edges,
+		a_i -- beginning of ith edge and b_i -- end of ith edge.
+
+Output: Although there might be some other output, answer is always presented as
+		edge list with assigned weights as follows:
+		a_1->b_1: w_1
+		...
+		a_m->b_m: w_m
+
+		where w_i -- assigned by the algorithm weight to ith edge. Note that
+		edges in the output might not be presented in the same order as they
+		were in the input. 	
+
+##############################################################################
+##############################################################################
